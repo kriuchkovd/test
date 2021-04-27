@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>VUE.JS - Сила</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+	<body>
+
+		<div id="app">
+		    <div class="stats">
+		      <h3 class="stats__title">{{"Задач на данный момент: "+ tasks.length}}</h3>
+		    </div>
+		    <task @task_done="remove_task(index)" :key="index" v-for="(data,index) in tasks" :data="data" ></task>
+		    <div class="add_task">
+		      <div class="add_task__input ">
+		          <input placeholder="Задача" type="text" v-model="new_task.title">
+		          <textarea placeholder="Описание" type="text" v-model="new_task.desc"></textarea>
+		      </div>
+		      <button class="add_task__btn" @click="add_task">+++</button>
+		    </div>
+	 	 </div>
+
+		<script type="text/javascript" src='js/vue.js'></script>
+		<script type="text/javascript" src='js/jquery.js'></script>
+		<script type="text/javascript" src='js/scriptVue.js'></script>
+	</body>
+</html>
